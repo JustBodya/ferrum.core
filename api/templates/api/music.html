@@ -4,13 +4,12 @@
 
 {% block content %}
     <div class="features">
-        <h1>Ferrum Музыка</h1><br>
+        <h1>Музыка</h1><br>
         <ul>
             {% for track in tracks %}
             <li>
                 <audio controls>
-                    <source src="static/api/media/distorted_sound.mp3" type="audio/mpeg"><br>
-                    <source src="static/api/media/ketzer.mp3" type="audio/mpeg"><br>
+                    <source src="{{ track.audio_url }}" type="audio/mpeg"><br>
                 </audio>
                 {{ track.title }}
             </li>
