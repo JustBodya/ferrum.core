@@ -4,8 +4,17 @@
 
 {% block content %}
     <div class="features">
-        <h1>Музыка</h1>
-        <p>Хватит лжи и хватит боли. Бобре, Курва, Я ПЕРДОЛЕ!!! Ферууум ооооуууооо феруууум оууууоуууу</p>
-        <button class="btn btn-danger">Авторы и Контакты</button>
+        <h1>Ferrum Музыка</h1><br>
+        <ul>
+            {% for track in tracks %}
+            <li>
+                <audio controls>
+                    <source src="static/api/media/distorted_sound.mp3" type="audio/mpeg"><br>
+                    <source src="static/api/media/ketzer.mp3" type="audio/mpeg"><br>
+                </audio>
+                {{ track.title }}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

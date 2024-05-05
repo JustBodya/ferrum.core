@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Track
 
 
 def index(request):
@@ -9,7 +10,8 @@ def index(request):
 
 
 def music(request):
-    return render(request, 'api/music.html')
+    tracks = Track.objects.all()
+    return render(request, 'api/music.html', {'tracks': tracks})
 
 
 def contact(request):
