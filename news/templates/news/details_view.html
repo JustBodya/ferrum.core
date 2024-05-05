@@ -1,0 +1,13 @@
+{% extends 'api/layout.html' %}
+
+{% block title %}{{ ferrum.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ ferrum.title }}</h1>
+        <p>{{ ferrum.data }}</p>
+        <p>{{ ferrum.text }}</p>
+        <a href="{% url 'news-update' ferrum.id %}" class="btn btn-info">Редактировать</a>
+        <a href="{% url 'news-delete' ferrum.id %}" class="btn btn-danger">Удалить</a>
+    </div>
+{% endblock %}

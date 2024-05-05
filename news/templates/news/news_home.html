@@ -1,0 +1,21 @@
+{% extends 'api/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Новости</h1>
+        {% if news %}
+            {% for new in news %}
+                <div class="alert alert-warning" style="background-color: rgb(136, 135, 135); color: rgb(0, 0, 0);">
+                    <h3>{{ new.title }}</h3>
+                    <p>{{ new.anons }}</p>
+                    <a href="{% url 'news-detail' new.id %}" class="btn btn-warning">Подробнее ...</a>
+                </div>
+            {% endfor %}
+        {% else %}
+                <p>Новостей нету!</p>
+        {% endif %}
+        {# Комментарий! #}
+    </div>
+{% endblock %}
